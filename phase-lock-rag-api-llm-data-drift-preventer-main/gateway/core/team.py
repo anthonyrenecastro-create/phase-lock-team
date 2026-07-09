@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from hashlib import sha256
 from secrets import token_urlsafe
-from threading import Lock
+from threading import Lock, RLock
 from typing import Protocol
 from uuid import uuid4
 
@@ -173,7 +173,7 @@ class TeamStoreProtocol(Protocol):
 
 class InMemoryTeamStore:
     def __init__(self) -> None:
-        self._lock = Lock()
+        self._lock = RLock()
         self._orgs: dict[str, Organization] = {}
         self._workspaces: dict[str, Workspace] = {}
         self._memberships: dict[tuple[str, str], Membership] = {}
