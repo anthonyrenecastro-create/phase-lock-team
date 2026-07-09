@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: phase-lock-gateway
+Version: 0.1.0
+Summary: FastAPI gateway for HRM manifold-surgery drift stabilization
+Requires-Python: >=3.10
+Requires-Dist: fastapi<0.112.0,>=0.111.0
+Requires-Dist: uvicorn[standard]<0.31.0,>=0.30.1
+Requires-Dist: pydantic<3.0.0,>=2.8.2
+Requires-Dist: python-multipart<0.1.0,>=0.0.9
